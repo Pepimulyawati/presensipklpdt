@@ -1,0 +1,24 @@
+📌 CHEAT SHEET SQLITE LARAVEL (TERMINAL INSTAN)
+
+Salin dan tempel perintah di bawah ini langsung ke terminal VS Code Anda. Semua perintah sudah otomatis menggunakan format tabel kotak (.mode box) yang rapi.
+
+1. Lihat Daftar Semua Tabel
+sqlite3 database/database.sqlite ".mode box" ".tables"
+
+2. Lihat Struktur Kolom / Tipe Data (Tabel siswas)
+sqlite3 database/database.sqlite ".mode box" ".header on" "PRAGMA table_info(siswas);"
+
+Optional lebih ringkas
+sqlite3 database/database.sqlite ".mode box" ".header on" "SELECT name FROM pragma_table_info('siswas');"
+
+3. Lihat Semua Isi Data (Tabel siswas)
+sqlite3 database/database.sqlite ".mode box" ".header on" "SELECT * FROM siswas;"
+
+4. Lihat Isi Data Terbatas (Hanya 5 Baris Teratas)
+sqlite3 database/database.sqlite ".mode box" ".header on" "SELECT * FROM siswas LIMIT 5;"
+
+5. Lihat Kolom Tertentu Saja (Hanya id & nama_lengkap)
+sqlite3 database/database.sqlite ".mode box" ".header on" "SELECT id, nama_lengkap FROM siswas;"
+
+Tips Tambahan:
+Ganti kata "siswas" di paling belakang dengan nama tabel lain (seperti "users", "gurus", "dudis") sesuai dengan tabel mana yang ingin Anda cek.
